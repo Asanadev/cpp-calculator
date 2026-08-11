@@ -35,7 +35,7 @@ double getNumbers(){
 }
 
 double operate1(double num1){
-    const double PI = 3.14159;
+    const double PI = 3.141592653589793;
     string op;
     while(true){
         cout << "Operator (sqr, sqrt, round, abs, log, sin, cos, tan): ";
@@ -55,10 +55,10 @@ double operate1(double num1){
             return round(num1); 
         }
         else if(op == "abs" || op == "||"){
-            return abs(num1); 
+            return std::abs(num1); 
         }
         else if(op == "log"){
-            if (num1 < 0){
+            if (num1 <= 0){
                 cout << "Math Error! Logarithm only for positive numbers.\n";
                 continue;
             }
@@ -107,7 +107,7 @@ double operate2(double num1, char op1, double num2){
         case '*':
             return num1 * num2;
         case '/':
-            if(num2 ==0){
+            if(num2 == 0){
                 cout << "Math Error! Cannot divide by zero";
                 return 0;
             }
@@ -115,7 +115,11 @@ double operate2(double num1, char op1, double num2){
         case '^':
             return pow(num1, num2);
         case '%':
-            if(num1 == (int)num1 && num2 == (int)num2){
+            if(num2 == 0){
+                cout << "Math Error! Cannot modulo by zero";
+                return 0;
+            }
+            else if(num1 == (int)num1 && num2 == (int)num2){
                 return (int)num1 % (int)num2;
             }
             else{
