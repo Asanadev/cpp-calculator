@@ -1,0 +1,11 @@
+#Compiled C++ files
+*.exe
+*.out
+*.o
+
+#VS Code
+.vscode/
+
+#Build folders
+build/
+bin/
